@@ -20,6 +20,8 @@ return new class extends Migration
             $table->timestamps();//create at, update at
         });
 
+        //xd
+
         Schema::create("prices", function(Blueprint $table){
             $table->id();
             $table->float("tarifa_menor");

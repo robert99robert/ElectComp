@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NosotrosController;
@@ -27,13 +28,14 @@ Route::controller(DeviceController::class)->group(function(){
     Route::get('device/{id}/eliminar', 'eliminar')->name('device.eliminar');
 });
 
-Route::controller(UserController::class)->group(function(){
-    Route::get('/user/crear', 'crear')->name("user.crear");// primer string es la ruta que seguirá
-    Route::post('/user/almacenar', 'almacenar')->name("user.almacenar");
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-Route::controller(ComprobarController::class)->group(function(){
-    Route::get('/comprobar', 'comprobar')->name("comprobador.comprobar");// primer string es la ruta que seguirá
-});
-//Route::get('/xdxdxd/crear', 'crear')->name("device.crear"); primer string es la ruta vista en el navegador y el segundo es la función del controlador
+require __DIR__.'/auth.php';

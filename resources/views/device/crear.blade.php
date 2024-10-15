@@ -1,7 +1,11 @@
 @extends('layouts.plantilla')
 @section('title', 'Crear aparato')
 @section('content')
+<div style="width: 95%; height:25px">
+    
+</div>
 <div style="border-bottom: 1px solid;margin: auto;width: 95%;height: 550px;">
+    <h1>Ingrese los datos del dispositivo</h1>
     <form action="{{route('device.almacenar')}}" method="POST">
         @csrf
         <label>

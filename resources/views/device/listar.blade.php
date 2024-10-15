@@ -1,11 +1,10 @@
-<?php
-session_start();
-?>
 @extends('layouts.plantilla')
 @section('title', 'Nosotros')
 @section('content')
+<div style="width: 95%; height:25px">
+</div>
 <div style="border-bottom: 1px solid;margin: auto;width: 95%;height: 550px;">
-   <div class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border">
+   <div class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border" style="border: 1px solid">
     
        <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
            <div class="flex items-center justify-between ">
@@ -140,10 +139,5 @@ session_start();
        </div>
        
 </div>
-<?php
-// Echo session variables that were set on previous page
-echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
-echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
-?>
 
 @endsection    
