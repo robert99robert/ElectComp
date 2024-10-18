@@ -9,7 +9,7 @@
        <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
            <div class="flex items-center justify-between ">
                <div>
-                   <h3 class="text-lg font-semibold text-slate-800">Lista de aparatos</h3>
+                   <h1 class="text-lg font-semibold text-slate-800">Lista de aparatos</h1>
                </div>
                 <div class="flex flex-col gap-2 shrink-0 sm:flex-row">
                 </div>

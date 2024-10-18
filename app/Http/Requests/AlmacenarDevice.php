@@ -25,7 +25,7 @@ class AlmacenarDevice extends FormRequest
             [
                 'tipo' => ['required', 'alpha:ascii', 'max:50'],
                 'marca' => ['required', 'alpha:ascii', 'max:50'],
-                'modelo' => ['required', 'alpha:ascii', 'max:50'],
+                'modelo' => ['required', 'string', 'max:50'],
                 'potencia_Kw' => ['required', 'integer', 'max:999'],
             ]
         ;

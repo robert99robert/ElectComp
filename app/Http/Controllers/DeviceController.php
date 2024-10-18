@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Device;
 use App\Http\Requests\AlmacenarDevice;
 use App\Http\Requests\ActualizarDevice;
+use Illuminate\Support\Facades\DB;
 
 class DeviceController extends Controller
 {
@@ -38,5 +39,10 @@ class DeviceController extends Controller
         $device = Device::find($id);
         $device->delete();
         return redirect()->route('device.listar');
+    }
+
+    public function buscar(){
+        $device = DB::select('select * from devices where potencia_Kw = ?', [15]);
+        return view('device.prueba', compact('device'));
     }
 }
