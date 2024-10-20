@@ -32,14 +32,13 @@ return new class extends Migration
 
         Schema::create("details", function(Blueprint $table){
             $table->id();
-            $table->string("tipo_det");
-            $table->string("marca_det");
-            $table->string("modelo_det");
-            $table->float("potencia_Kw_det");
-            $table->float("tarifa_menor_det");
-            $table->float("tarifa_mayor_det");
-            $table->string("pais_det");
+            $table->unsignedBigInteger('id_us');
+            $table->unsignedBigInteger('id_de');
+            $table->unsignedBigInteger('id_pr');
             $table->timestamps();//create at, update at
+            $table->foreign('id_us')->references('id')->on('users');
+            $table->foreign('id_de')->references('id')->on('devices');
+            $table->foreign('id_pr')->references('id')->on('prices');
         });
 
         /*Schema::create("users_devices", function(Blueprint $table){

@@ -41,8 +41,5 @@ class DeviceController extends Controller
         return redirect()->route('device.listar');
     }
 
-    public function buscar(){
-        $device = DB::select('select * from devices where potencia_Kw = ?', [15]);
-        return view('device.prueba', compact('device'));
-    }
+    
 }
