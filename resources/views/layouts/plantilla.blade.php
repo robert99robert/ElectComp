@@ -14,6 +14,7 @@
     body{
         background-image: url(https://static.vecteezy.com/system/resources/previews/014/072/899/non_2x/transmission-tower-or-power-line-electricity-pylons-line-drawing-illustration-vector.jpg);
         font-family: Georgia, serif;
+        
     }
     footer{
         background-color: #cccccc;
@@ -25,7 +26,7 @@
         height: 100px;
         }
     nav{
-        background-color:#cccccc;
+        background-color:;
     }
 </style>
 <body>

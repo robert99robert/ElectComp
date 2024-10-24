@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\CompareController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ComprobarController;
 use App\Http\Middleware\CheckLogin;
@@ -34,6 +35,10 @@ Route::controller(DetailController::class)->group(function(){
    Route::get('/detail/crear', 'crear')->name("detail.crear");
    Route::post('/detail/almacenar', 'almacenar')->name("detail.almacenar");
    Route::get('/detail/prueba', 'prueba')->name("detail.prueba");
+});
+
+Route::controller(CompareController::class)->group(function(){
+    Route::get('/comparar', 'comparar')->name("comparar");
 });
 
 Route::get('/dashboard', function () {
